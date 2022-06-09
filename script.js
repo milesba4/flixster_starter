@@ -6,7 +6,7 @@ const loadButtonEl= document.querySelector("#load-button")
 const MY_API_KEY = "7a335bdf5d0d4591e95ae546290d36b6"
 let pageNum = 1
 //Event listener for submission
-movieFormEl.addEventListener("submit",getMovies)
+movieFormEl.addEventListener("submit",handleSubmitForm)
 loadButtonEl.addEventListener("click",loadMore)
 console.log("click=",)
 
@@ -42,9 +42,10 @@ displayMovies(movieData)
 
 function displayMovies(movieData){
 movieData.results.forEach(function(element){
+ document.getElementById("load-button").hidden = false;
  movieResultsEl.innerHTML += 
   '<div class = "grid-item movie-card">'
-  + '<img class = "movie-poster" src= https://image.tmdb.org/t/p/w500/' + element.poster_path + ' width = 200 height = 200/>' + 
+  + '<img class = "movie-poster" src= https://image.tmdb.org/t/p/w500/' + element.poster_path + ' width = 300 height = 300/>' + 
   '<br>' + '<p class = "movie-title">'+ element.original_title +'</p>' +
   '<br>'+ '<img src="https://cdn-icons-png.flaticon.com/512/3004/3004112.png" height = 20 width = 20 >' + '<p class = "movie-votes">'+element.vote_average+'</p>'
   '</div>'
@@ -53,6 +54,13 @@ movieData.results.forEach(function(element){
 }
 
 
+function handleSubmitForm(evt){
+    movieResultsEl.innerHTML = " "
+    getMovies(evt)
+
+
+
+}
 async function loadMore(evt){
     pageNum+=1
     const dataMovie = await getSqResult()
