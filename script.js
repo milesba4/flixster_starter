@@ -2,25 +2,36 @@
 const movieFormEl = document.querySelector("#movie-form")
 const userInputEl = document.querySelector("#search-input")
 const movieResultsEl = document.querySelector("#movies-grid")
+const loadButtonEl= document.querySelector("#load-button")
 const MY_API_KEY = "7a335bdf5d0d4591e95ae546290d36b6"
-
+let pageNum = 1
 //Event listener for submission
 movieFormEl.addEventListener("submit",getMovies)
-console.log("submit=",submit)
+loadButtonEl.addEventListener("click",loadMore)
+console.log("click=",)
 
 
 //Functions
 
+
+async function getSqResult(){
+    let search =userInputEl.value
+    let URL = 'https://api.themoviedb.org/3/search/movie?api_key='+ MY_API_KEY + '&query=' + search + '&page=' + pageNum
+    console.log("url=", URL)
+    const response = await fetch(URL)
+    const movieData = await response.json();
+    return movieData
+
+
+}
 async function getMovies(evt){
 //prevent reload
 evt.preventDefault()
 console.log("evt=",evt)
 let search =userInputEl.value
 console.log("search=",search)
-let URL = 'https://api.themoviedb.org/3/search/movie?api_key='+ MY_API_KEY + '&query=' + search
-console.log("url=", URL)
-const response = await fetch(URL)
-const movieData = await response.json();
+
+const movieData = await getSqResult()
 console.log("movieData=",movieData)
 displayMovies(movieData)
 
@@ -35,11 +46,15 @@ movieData.results.forEach(function(element){
   '<div class = "grid-item movie-card">'
   + '<img class = "movie-poster" src= https://image.tmdb.org/t/p/w500/' + element.poster_path + ' width = 200 height = 200/>' + 
   '<br>' + '<p class = "movie-title">'+ element.original_title +'</p>' +
-  '<br>'+ '<p class = "movie-votes">'+element.vote_count+'</p>'
+  '<br>'+ '<img src="https://cdn-icons-png.flaticon.com/512/3004/3004112.png" height = 20 width = 20 >' + '<p class = "movie-votes">'+element.vote_average+'</p>'
   '</div>'
-
-;
- 
-    console.log("movieResults=",movieResultsEl)
 });
+;
+}
+
+
+async function loadMore(evt){
+    pageNum+=1
+    const dataMovie = await getSqResult()
+    displayMovies(dataMovie)
 }
