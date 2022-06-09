@@ -22,6 +22,19 @@ console.log("url=", URL)
 const response = await fetch(URL)
 const movieData = await response.json();
 console.log("movieData=",movieData)
+displayMovies(movieData)
 
 
+
+}
+
+
+function displayMovies(movieData){
+movieData.results.forEach(function(element){
+ movieResultsEl.innerHTML += 
+ '<img src= https://image.tmdb.org/t/p/w500/' + element.poster_path + ' width = 200 height = 200/>';
+ 
+ 
+    console.log("movieResults=",movieResultsEl)
+});
 }
