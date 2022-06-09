@@ -32,8 +32,11 @@ displayMovies(movieData)
 function displayMovies(movieData){
 movieData.results.forEach(function(element){
  movieResultsEl.innerHTML += 
- '<img src= https://image.tmdb.org/t/p/w500/' + element.poster_path + ' width = 200 height = 200/>';
- 
+  '<img class = "movie-poster" src= https://image.tmdb.org/t/p/w500/' + element.poster_path + ' width = 200 height = 200/>' + 
+  '<br>' + '<h2 class = "movie-title">'+ element.original_title +'</h2>' 
+
+  '<h2 class = "movie-title">'+ element.original_title +'</h2>'
+;
  
     console.log("movieResults=",movieResultsEl)
 });
