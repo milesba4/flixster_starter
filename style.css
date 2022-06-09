@@ -1,11 +1,30 @@
-*{
-    background-color:rgba(150, 145, 145, 0.8) ;
+body{
+    background-image: linear-gradient(to bottom right,rgb(41, 81, 229), rgb(88, 201, 92));
+    ;
 }
 
+label{
+    color:white;
+}
 h1{
-text-align: center;
+font-size: 30px;
 
+}
 
+#movie-form{
+
+justify-content: space-around;
+justify-content: center;
+display:flex;
+}
+
+header{
+    justify-content: center;
+    display:flex;
+}
+.icon{
+    position:relative;
+    top: 0;
 }
 
 .grid-container{
@@ -15,12 +34,31 @@ text-align: center;
     padding: 10px;
     gap: 30px 30px;
 
+
 }
 .grid-item {
-    background-color: rgba(40, 39, 39, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.8);
+    background-image: linear-gradient(to bottom right,rgb(41, 81, 229), rgb(88, 201, 92));
+    border: 2px solid rgb(255, 255, 255);
     padding: 20px;
     font-size: 30px;
     text-align: center;
     border-radius: 25px;
   }
+
+.movie-title{
+
+
+    color:white;
+}
+
+.movie-votes{
+
+
+    color:white;
+}
+
+.movie-poster{
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 25px;
+
+}
