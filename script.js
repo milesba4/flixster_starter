@@ -41,13 +41,13 @@ displayMovies(movieData)
 
 
 function displayMovies(movieData){
+console.log("works=", "hello")
 movieData.results.forEach(function(element){
  document.getElementById("load-button").hidden = false;
  movieResultsEl.innerHTML += 
-  '<div class = "grid-item movie-card">'
-  + '<img class = "movie-poster" src= https://image.tmdb.org/t/p/w500/' + element.poster_path +' alt= '+'"'+element.original_title +'" ' + ' width = 300 height = 300/>' + 
+  '<div class = "grid-item movie-card">'+ '<img class = "movie-poster" src= https://image.tmdb.org/t/p/w500/' + element.poster_path +' alt= '+ '"' + element.original_title + '" ' +' width = 300 height = 300/>' + 
   '<br>' + '<p class = "movie-title">'+ element.original_title +'</p>' +
-  '<br>'+ '<img src="https://cdn-icons-png.flaticon.com/512/3004/3004112.png" height = 20 width = 20 >' + '<p class = "movie-votes">'+element.vote_average+'</p>'
+  '<br>'+ '<img src="https://cdn-icons-png.flaticon.com/512/3004/3004112.png" height = 20 width = 20 >' + '<p class = "movie-votes">'+element.vote_average+'</p>'+
   '</div>'
 });
 console.log("movieResultsEL=",movieResultsEl)
