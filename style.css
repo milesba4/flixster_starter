@@ -80,3 +80,9 @@ header{
     background-color: #0e46f1;
     color: white;
 }
+
+#movie-submit{
+    position: absolute;
+    left: 62.5%;
+
+}
