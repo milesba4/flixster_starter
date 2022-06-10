@@ -1,5 +1,5 @@
 body{
-    background-image: linear-gradient(to bottom right,rgb(41, 81, 229), rgb(88, 201, 92));
+    background-image: linear-gradient(to bottom right,rgb(33, 33, 34), rgb(33, 33, 34));
     ;
 }
 
@@ -38,7 +38,7 @@ header{
 
 }
 .grid-item {
-    background-image: linear-gradient(to bottom right,rgb(41, 81, 229), rgb(88, 201, 92));
+    background-image: linear-gradient(to bottom right,rgb(57, 58, 60), rgb(245, 79, 67));
     border: 2px solid rgb(255, 255, 255);
     padding: 20px;
     font-size: 30px;
@@ -47,9 +47,10 @@ header{
   }
 
 .movie-title{
-
-
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 25px;
     color:white;
+    font-family: 'Shrikhand', cursive;
 }
 
 .movie-votes{
@@ -77,7 +78,7 @@ header{
 
   
 #load-button:hover {
-    background-color: #0e46f1;
+    background-color: rgb(245, 79, 67);
     color: white;
 }
 
@@ -86,3 +87,5 @@ header{
     left: 62.5%;
 
 }
+
+
