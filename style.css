@@ -65,7 +65,18 @@ header{
 }
 
 #load-button{
-
+    border: 2px solid white;
     border-radius: 8px;
     padding: 10px 24px;
+    transition-duration: 0.4s;
+    position: relative;
+    left: 50%;
+
+}
+
+
+  
+#load-button:hover {
+    background-color: #0e46f1;
+    color: white;
 }
