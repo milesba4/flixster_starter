@@ -6,7 +6,11 @@ body{
 label{
     color:white;
     font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    position: absolute;
+    left:17%;
 }
+
 h1{
 font-size: 30px;
 
@@ -89,7 +93,7 @@ header{
 #movie-submit button[type="submit"] {
     position: absolute;
     right: 30%;
-    top:10%;
+    top:11%;
     border-radius: 80%;
     width: 53.5px;
     height: 50px;
@@ -104,7 +108,7 @@ header{
 }
 #movie-submit button:hover{
 
-    background-color: rgb(245, 79, 67);
+    background-image: linear-gradient(to bottom right,rgb(57, 58, 60), rgb(245, 79, 67));
     color: white;
     transition-duration: 0.4s;
     border: 1px solid #FFF;
@@ -126,7 +130,9 @@ header{
 }
 
 #movie-form input[type="text"] {
-width:150px;
+width:300px;
 background-color: #ffffff;
+height: 30px;
+border-radius: 15px;
 
 }
