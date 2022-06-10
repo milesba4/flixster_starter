@@ -116,16 +116,20 @@ header{
 }
 
 .votes{
-    display: flex;
-    flex-direction: row;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position:relative;
+    top: 8%;
 
 }
 
 #load-button{
 
     position: fixed ;
-    bottom: 10px;
-    right: 10px;
+    bottom: 0%;
+    left: 45%;
+    width: 200px;
     justify-content: center;
 }
 

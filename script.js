@@ -5,6 +5,7 @@ const movieResultsEl = document.querySelector("#movies-grid")
 const loadButtonEl= document.querySelector("#load-button")
 const MY_API_KEY = "7a335bdf5d0d4591e95ae546290d36b6"
 let pageNum = 1
+let NowPlayingPage = true;
 //Event listener for submission
 movieFormEl.addEventListener("submit",handleSubmitForm)
 loadButtonEl.addEventListener("click",loadMore)
@@ -27,6 +28,7 @@ async function getSqResult(){
 async function getMovies(evt){
 //prevent reload
 evt.preventDefault()
+NowPlayingPage = false
 console.log("evt=",evt)
 let search =userInputEl.value
 console.log("search=",search)
@@ -64,11 +66,18 @@ function handleSubmitForm(evt){
 }
 async function loadMore(evt){
     pageNum+=1
-    const dataMovie = await getSqResult()
-    displayMovies(dataMovie)
+    if (NowPlayingPage ==true) {
+        const dataNowPlaying = await getNowPlayingResults(pageNum)
+        console.log("dataNowPlaying=",dataNowPlaying)
+        DisplayNowPlaying(dataNowPlaying)
+      } else {
+        const dataMovie = await getSqResult()
+        displayMovies(dataMovie)
+      }
+
 }
 
- async function getNowPlayingResults(){
+ async function getNowPlayingResults(pageNum){
     let URL = 'https://api.themoviedb.org/3/movie/now_playing?api_key='+ MY_API_KEY + '&page=' + pageNum
     console.log("url=", URL)
     const response = await fetch(URL)
@@ -93,13 +102,14 @@ window.onload = function(){
     }
 
 function DisplayNowPlaying(NowPlayingData){
+    console.log("hi")
     NowPlayingData.results.forEach(function(element){
         document.getElementById("load-button").hidden = false;
         movieResultsEl.innerHTML += 
          '<div class = "grid-item movie-card">'
          + '<img class = "movie-poster" src= https://image.tmdb.org/t/p/w500/' + element.poster_path +' alt= '+'"'+element.original_title +'" ' + ' width = 300 height = 300/>' + 
          '<br>' + '<p class = "movie-title">'+ element.original_title +'</p>' +
-         '<br>'+ '<div class="votes"> <img class ="star" src="https://cdn-icons-png.flaticon.com/512/3004/3004112.png" height = 20 width = 20 >' + '<p class = "movie-votes">'+element.vote_average+'</p>'
+         '<br>'+ '<div class="votes"> <img class ="star" src="https://cdn-icons-png.flaticon.com/512/3004/3004112.png" height = 30 width = 30 >' + '<p class = "movie-votes">'+element.vote_average+'</p>'
          '</div> </div>'
        });
        console.log("DisplayNowPlayingInner=",movieResultsEl )
