@@ -38,7 +38,7 @@ header{
 
 }
 .grid-item {
-    background-image: linear-gradient(to bottom right,rgb(45, 46, 47), rgb(225, 73, 50));
+    background-image: linear-gradient(to bottom right,rgb(41, 81, 229), rgb(88, 201, 92));
     border: 2px solid rgb(255, 255, 255);
     padding: 20px;
     font-size: 30px;
@@ -83,6 +83,6 @@ header{
 
 #movie-submit{
     position: absolute;
-    left: 65.5%;
+    left: 62.5%;
 
 }
