@@ -2,7 +2,7 @@
 const movieFormEl = document.querySelector("#movie-form")
 const userInputEl = document.querySelector("#search-input")
 const movieResultsEl = document.querySelector("#movies-grid")
-const loadButtonEl= document.querySelector("#load-button")
+const loadButtonEl= document.querySelector("#load-more-movies-btn")
 const MY_API_KEY = "7a335bdf5d0d4591e95ae546290d36b6"
 let pageNum = 1
 let NowPlayingPage = true;
@@ -44,7 +44,7 @@ displayMovies(movieData)
 
 function displayMovies(movieData){
 movieData.results.forEach(function(element){
- document.getElementById("load-button").hidden = false;
+ document.getElementById("load-more-movies-btn").hidden = false;
  movieResultsEl.innerHTML += 
   '<div class = "grid-item movie-card">'
   + '<img class = "movie-poster" src= https://image.tmdb.org/t/p/w500/' + element.poster_path +' alt= '+'"'+element.original_title +'" ' + ' width = 300 height = 300/>' + 
@@ -104,7 +104,7 @@ window.onload = function(){
 function DisplayNowPlaying(NowPlayingData){
     console.log("hi")
     NowPlayingData.results.forEach(function(element){
-        document.getElementById("load-button").hidden = false;
+        document.getElementById("load-more-movies-btn").hidden = false;
         movieResultsEl.innerHTML += 
          '<div class = "grid-item movie-card">'
          + '<img class = "movie-poster" src= https://image.tmdb.org/t/p/w500/' + element.poster_path +' alt= '+'"'+element.original_title +'" ' + ' width = 300 height = 300/>' + 

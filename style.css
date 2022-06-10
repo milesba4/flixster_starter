@@ -71,7 +71,7 @@ header{
 
 }
 
-#load-button{
+#load-more-movies-btn{
     border: 2px solid white;
     border-radius: 8px;
     padding: 10px 24px;
@@ -83,7 +83,7 @@ header{
 
 
   
-#load-button:hover {
+#load-more-movies-btn:hover {
     background-color: rgb(245, 79, 67);
     color: white;
     
@@ -124,7 +124,7 @@ header{
 
 }
 
-#load-button{
+#load-more-movies-btn{
 
     position: fixed ;
     bottom: 0%;
