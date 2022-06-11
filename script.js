@@ -4,12 +4,13 @@ const userInputEl = document.querySelector("#search-input")
 const movieResultsEl = document.querySelector("#movies-grid")
 const loadButtonEl= document.querySelector("#load-more-movies-btn")
 const MY_API_KEY = "7a335bdf5d0d4591e95ae546290d36b6"
+const closeSearchEl=document.querySelector("#close-search-btn")
 let pageNum = 1
 let NowPlayingPage = true;
 //Event listener for submission
 movieFormEl.addEventListener("submit",handleSubmitForm)
 loadButtonEl.addEventListener("click",loadMore)
-
+closeSearchEl.addEventListener("click",closeSearch)
 
 
 //Functions
@@ -116,8 +117,19 @@ function DisplayNowPlaying(NowPlayingData){
        ;
       
 
+       }
 
-}
+
+
+    
+       function closeSearch(){
+        console.log("works")
+        NowPlayingPage = true;
+        pageNum=1
+        movieResultsEl.innerHTML = ""
+        getNowPlaying()
+
+    }
 
 
 
