@@ -6,7 +6,7 @@ Submitted by: **MILES BAFFOUR**
 
 Estimated time spent: **25** hours spent in total
 
-Deployed Application (optional): [Flixster Deployed Site]([ADD_LINK_HERE](http://127.0.0.1:5500/))
+Deployed Application (optional): [Flixster Deployed Site](http://127.0.0.1:5500/)
 
 ### Application Features
 
