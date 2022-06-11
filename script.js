@@ -126,8 +126,10 @@ function DisplayNowPlaying(NowPlayingData){
         console.log("works")
         NowPlayingPage = true;
         pageNum=1
+
         movieResultsEl.innerHTML = ""
         getNowPlaying()
+        document.getElementById("movie-form").reset()
 
     }
 
