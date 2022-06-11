@@ -140,3 +140,21 @@ height: 30px;
 border-radius: 15px;
 
 }
+
+#close-search-btn{
+position:absolute;
+left:56%;
+top:12.3%;
+width:80px;
+height:32px;
+border-radius: 15px;
+color: grey;
+border: 1px solid #FFF;
+
+
+}
+
+#close-search-btn:hover{
+
+    border: 2.5px solid grey;
+}
